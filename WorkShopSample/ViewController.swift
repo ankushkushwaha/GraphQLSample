@@ -6,7 +6,7 @@
 //  Copyright © 2018 Ankush Kushwaha. All rights reserved.
 //
 
-// sudo apollo-codegen introspect-schema http://api.catalysis-hub.org/graphql --output schema.json
+// sudo apollo-codegen introspect-schema https://graphql-pokemon.now.sh --output schema.json
 
 //   https://github.com/APIs-guru/graphql-apis
 
