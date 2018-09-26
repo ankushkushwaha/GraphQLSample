@@ -9,9 +9,9 @@
 // sudo apollo-codegen introspect-schema http://api.catalysis-hub.org/graphql --output schema.json
 
 //   https://github.com/APIs-guru/graphql-apis
+
 //    https://react-relay-pokemon.now.sh/#/
 
-//https://graphql-pokemon.now.sh/?query=%7B%0A%20%20pokemon(name%3A%20%22Pikachu%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20attacks%20%7B%0A%20%20%20%20%20%20special%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20damage%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20evolutions%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20weight%20%7B%0A%20%20%20%20%20%20%20%20minimum%0A%20%20%20%20%20%20%20%20maximum%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20attacks%20%7B%0A%20%20%20%20%20%20%20%20fast%20%7B%0A%20%20%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20%20%20type%0A%20%20%20%20%20%20%20%20%20%20damage%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D
 import UIKit
 
 class ViewController: UIViewController {
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     func loadDetails() {
 
         let request = GraphQLRequest()
-        request.pokemonDetails(name: "Pikachu") { (result, error) in
+        request.pokemonDetails(name: "Squirtle") { (result, error) in
 
             if error != nil {
                 print(error ?? "")
@@ -37,6 +37,26 @@ class ViewController: UIViewController {
                 print(result?.data?.pokemon?.id)
                 print(result?.data?.pokemon?.name)
                 print(result?.data?.pokemon?.number)
+
+
+                guard let evolutions = result?.data?.pokemon?.evolutions as? [PokemonQuery.Data.Pokemon.Evolution] else {
+                    print("\n\n\n===== No Evolutions found \n\n\n")
+
+                    return
+                }
+
+                print("===== \n\n\nEvolutions =====\n\n\n")
+                for evolution in evolutions {
+
+                    print(evolution.name)
+                    print(evolution.name)
+
+                    print(evolution.attacks)
+
+                    print("\n\n\n")
+
+
+                }
 
             }
         }

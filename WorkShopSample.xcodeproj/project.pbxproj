@@ -119,11 +119,11 @@
 			buildConfigurationList = ACEBAE48215BBB4600E62761 /* Build configuration list for PBXNativeTarget "WorkShopSample" */;
 			buildPhases = (
 				4FAC1390DA63763414F104A6 /* [CP] Check Pods Manifest.lock */,
+				ACEBAE4B215BBC4500E62761 /* GraphQl API generation */,
 				ACEBAE32215BBB4400E62761 /* Sources */,
 				ACEBAE33215BBB4400E62761 /* Frameworks */,
 				ACEBAE34215BBB4400E62761 /* Resources */,
 				F9B571511F6D6B29BDB95E85 /* [CP] Embed Pods Frameworks */,
-				ACEBAE4B215BBC4500E62761 /* GraphQl API generation */,
 			);
 			buildRules = (
 			);
